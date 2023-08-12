@@ -1,10 +1,54 @@
-## Install node.js and yarn
+## Project structure
 
-Install node.js from <https://nodejs.org/en/>, then install yarn by running the following command in your terminal
+iTELL requires the following applications and databases to be set up to function properly.
+* Base web application: <https://github.com/learlab/itell>
+* Scoring engine and API: <https://github.com/learlab/textbook-summary-api>
+* Postgres database: [schema]()
+
+## Deploying the base web application
+
+### Environment variables
+
+The following enviornment variables must be defined first
+
+Set up [Google OAuth 2.0](https://developers.google.com/identity/protocols/oauth2) and [NextAuth](https://next-auth.js.org/) for user authentication.
 
 ```bash
-npm install -g yarn
+GOOGLE_CLIENT_ID=<YOUR_GOOGLE_CLIENT_ID>
+GOOGLE_CLIENT_SECRET=<YOUR_GOOGLE_CLIENT_SECRET>
+NEXTAUTH_URL=<YOUR_BASEAPP_URL>
+NEXTAUTH_SECRET=<YOUR_NEXTAUTH_SECRET>
 ```
+
+After setting up a Postgres database using the schema provided above
+```bash
+DATABASE_URL=<YOUR_DATABASE_URI>
+```
+
+After setting up the scoring engine and API
+```bash
+NEXT_PUBLIC_SCORE_API_URL=<YOUR_SCORE_API_ENDPOINT>
+```
+
+### Install packages, generate prisma client, and build
+
+
+
+```bash
+pnpm install
+pnpm prisma generate
+next build
+```
+
+```bash
+pnpm prisma generate
+```
+
+## Setting up Supabase
+
+Access the sql file from this link.
+
+
 
 
 

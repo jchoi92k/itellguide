@@ -33,17 +33,17 @@ theme:
     code: Roboto Mono
 
   palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
     - scheme: slate
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-4
+        name: Switch to dark mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
         name: Switch to light mode
 
 markdown_extensions:
@@ -53,13 +53,15 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Data Collecton:
-      - User Identity: data/identity.md
-      - Summaries: data/summary.md
-      - Keystroke Logging: data/keystrokes.md
-      - Focus Time: data/focus.md
-      - Google Analytics: data/ga.md
+  - What is iTELL:
+    - About: about/about.md
   - Development:
-      - Starting the website: development/dependency.md
-      - Add textbook content: development/content.md
-      - Connecting to Firebase: development/firebase.md
+    - Starting the website: development/dependency.md
+    - Adding textbook content: development/content.md
+  - Data Schema:
+    - User Identity: data/identity.md
+    - Summaries: data/summary.md
+    - Keystroke Logging: data/keystrokes.md
+    - Focus Time: data/focus.md
+    - Google Analytics: data/ga.md
+

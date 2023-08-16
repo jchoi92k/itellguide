@@ -8,36 +8,21 @@ iTELL requires the following applications and databases to be set up to function
 + Backend - scoring engine and API (FastAPI): <https://github.com/learlab/textbook-summary-api>
 + Database (Postgres)
 
-Follow the steps below to deploy your own intelligent textbook.
-
+In this tutorial, we will show you how to set up iTELL using some popular hosting services that have generous free tiers. You can also use your own hosting services of choice.
 
 ## Step 1. Set up a Postgres database
 
-Set up a Postgres database of your choice. The default iTELL application uses [Supabase](https://supabase.com/). Migration will be handled by [Prisma](https://www.prisma.io/) as part of Step 3. All required files for the migration are included in [the prisma folder in the frontend application's Github repository](https://github.com/learlab/itell/tree/main/apps/example-poe/prisma).
-
+The default iTELL application uses [Supabase](https://supabase.com/). Migration will be handled by [Prisma](https://www.prisma.io/) as part of Step 3. All required files for the migration are included in [the prisma folder in the frontend application's Github repository](https://github.com/learlab/itell/tree/main/apps/example-poe/prisma).
 
 ## Step 2. Set up the Backend
-The backend was developed using Python's [FastAPI](https://fastapi.tiangolo.com/). You can use different setups and cloud services for local development and deployment.
 
-### Local development
-Clone [the backend github repository](https://github.com/learlab/textbook-summary-api) and 1) install the requirements from the pipfile and 2) download the required models from SpaCy and Huggingface for use in a local environment:
+iTELL uses an AI-powered scoring API to evaluate student writing. It was developed using Python's [FastAPI](https://fastapi.tiangolo.com/). You can use different setups and cloud services for local development and deployment, such as Google Cloud Run or Heroku. The API is packaged as a Docker container, so deployment is as easy as creating a `.env` file with information about your SupaBase database and deploying to a hosting service.
 
-```
-git clone https://github.com/learlab/textbook-summary-api)
-cd textbook-summary-api
-pip install -r requirements.txt
-python .\download_models.py
-```
+Documentation for the API is located at [the backend github repository](https://github.com/learlab/textbook-summary-api).
 
-### Deployment
-You can deploy the application using any web hosting service of your preference. A Dockerfile is included in the repository for use. Note that a server with a GPU is required to run the summary and QA evaluation models at a practical speed. After deployment, test whether the GPU is enabled by using the `/gpu` endpoint.
+## Step 3. Deploy iTELL to Vercel
 
-You can read more about the development and deployment from the repo's `read.me` [file](https://github.com/learlab/textbook-summary-api/blob/main/README.md).
-
-
-## Step 3. Frontend deployment
-
-Use a web hosting provider of your choice to deploy the frontend. The default iTELL application uses [Vercel](https://vercel.com/). We will first go over the general setup requirements, and then we will provide a short example of what the deployment will look like when using Vercel.
+The default iTELL application uses [Vercel](https://vercel.com/). We will first go over the general setup requirements, and then we will provide a short example of what the deployment will look like when using Vercel.
 
 ### Environment variables
 

@@ -1,6 +1,7 @@
 # Restructuring your Textbook for iTELL
 
 ## Modules, Chapters, Sections, and Subsections
+
 ```
 └── Content/
     └── Section/
@@ -17,17 +18,20 @@
         ├── Module 2
         └── ...
 ```
-iTELL expects text contents to be provided using three separate levels: `Modules`, `Chapters`, `Sections`, and `Subsections`. `Modules` are collections of `Chapters`, and `Chapters` collections of `Sections`. Each `Module` and `Chapter` are represented as subdirectories in the `content` folder. Each `Section` will live inside a corresponding `Chapter` directory as an `.mdx` file, and `Subsections` as components within the `Section` file.
+
+iTELL expects text content to be provided using three separate levels: `Modules` (optional), `Chapters`, `Sections`, and `Subsections`. `Modules` are collections of `Chapters`, and `Chapters` collections of `Sections`. Each `Module` and `Chapter` are represented as subdirectories in the `content` folder. Each `Section` is located within a `Chapter` directory as a `.md` or `.mdx` file. `Subsections` are an organizational unit used by iTELL to divide up long sections. In a `Section` Markdown file, iTELL uses Markdown Level-1 and Level-2 headings to divide the text into meaningful units. `Subsections` work best when they are 200-400 words long (about 3 paragraphs). 
 
 iTELL is in the process of developing a feature that will facilitate the restructuring of any textbook into these levels. Currently, the recommendation is that individual content developers restructure their textbook to these four levels using their own discretion and custom scripts.
 
+## Content Authoring
 
-## MDX and JSX/TSX
-After you divide your textbook contents into `Sections` and transfer them into individual MDX files, the contents then have to be reformatted following MDX syntax. You can use regular Markdown syntax and custom JSX/TSX components to increase your textbook's interactivity.
+After you divide your textbook contents into `Sections` and create the appropriate file structure for your textbook, the contents then have to be formatted in Markdown. You can use regular Markdown (`.md`), which is a simple and intuitive language for text formatting. If you want to customize the content and appearance further, you can also include Javascript in your Markdown files (`.mdx`). We have created some predefined JavaScript components to increase your textbook's interactivity.
 
-### MD
+### Markdown
+
 #### Frontmatter
-Data about the `Section` should be included at the top of each MDX file between sets of three hyphens (---).
+
+Each `Section` file should include a title card at the top, between two sets of three hyphens (---). This provides information about the `Section` page.
 ```
 ---
 title: "What Is Economics And Why Is It Important?"
@@ -35,41 +39,25 @@ title: "What Is Economics And Why Is It Important?"
 ```
 
 #### Headings
-Headings are created with consecutive hash characters (#).
+Headings are created with consecutive hash characters (#). iTELL uses Level-1 and Level-2 headings to divide the text into subsections. iTELL AI tools will ignore Level-3 and lower headings, but they can still be used to visually organize the text.
+```
 ```
 # H1
 ## H2
 ### H3
 ...
-
+```
 ```
 
-#### Lists
-Unordered lists are created with asterisks and ordered lists with numbers followed by a period.
-```
-* unordered list item 1
-* unordered list item 2
+#### General Markdown Formatting
+For Markdown formatting options that are not specific to iTELL, please refer to the following excellent guides: [Markdown Guide](https://www.markdownguide.org/basic-syntax/) and [Chicago Docs](https://kabartolo.github.io/chicago-docs-demo/docs/mdx-guide/writing/).
 
-1. ordered list item 1
-2. ordered list item 2
-...
-```
-
-#### Links
-Links are created by enclosing the link texts in square brackets and the URL in parantheses.
-```
-[Link text](https://www.yoururl.com)
-```
-
-#### Others
-There are multiple great resources you can use as a reference when writing Markdown. Here is one by [Markdown Guide](https://www.markdownguide.org/basic-syntax/) and one by [Chicago Docs](https://kabartolo.github.io/chicago-docs-demo/docs/mdx-guide/writing/)
-
-
-### JSX/TSX
-MDX supports the use of custom JSX/TSX components. Below are some custom components that come prebuilt with iTELL.
+### Javascript
+iTELL supports supports the use of custom Javascript components in MDX (`.mdx`) files. Below are some custom components that come prebuilt with iTELL.
 
 #### Info and Callout
 ![info](images/component_info_callout.png)
+
 ##### Info
 ```
 <Info title="Title for info card">
@@ -85,6 +73,7 @@ MDX supports the use of custom JSX/TSX components. Below are some custom compone
 
 #### Columns, Image, and YoutubeVideo
 ![info](images/component_columns_image_youtubevideo.png)
+
 ##### Columns
 ```
 <Columns>
@@ -97,6 +86,7 @@ MDX supports the use of custom JSX/TSX components. Below are some custom compone
   ...
 </Columns>
 ```
+
 ##### Image
 ```
 <Image
@@ -155,7 +145,4 @@ MDX supports the use of custom JSX/TSX components. Below are some custom compone
 ```
 
 ## Further customization
-Refer to `packages/ui/src/components/callout.tsx` to find other custom components provided by iTELL. Also note that iTELL is completely open source and you can write your own components for further customization.
-
-
-
+Refer to `packages/ui/src/components/callout.tsx` to find other custom components provided by iTELL. You can also use these as a reference for creating your own components!

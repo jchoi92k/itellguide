@@ -1,12 +1,12 @@
 # Identity Management
 
-When a user first logs in he/she is required to input some identity data. Currently we only support logins via one's google account. Other methods will be added later, e.g., email-password, phone number or via other social providers.
+When a user first logs in, they are required to input some identity data. Currently we only support logins via Google account. We are working on additional authentication options: email/password, SSO with Learning Management Systems.
 
 ## Sample data
 
-User data is stored in two places, firebase's built-in user pool and firestore.
+User data is stored in two places, FireBase's built-in user pool and FireStore.
 
-The user pool stores what is returned from the identity provider. For example, a user created via google login has
+The user pool stores what is returned from the identity provider. For example, a user created via Google login has
 
 ```json
 {
@@ -38,7 +38,7 @@ The user pool stores what is returned from the identity provider. For example, a
 }
 ```
 
-Firestore stores business-relevant user data.
+FireStore keeps a record of user data.
 
 ```json
 {

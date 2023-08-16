@@ -8,7 +8,9 @@ iTELL is an open source framework for developing and deploying intelligent textb
 
 ### Comprehension checks
 
-Embed summary tasks and short answer tests into your textbook to ensure that students understand the contents of the textbook. Automate the whole process and reduce teacher workload: an AI model will automatically create short answer questions, evaluate student responses (both summaries and short answers), and provide appropriate feedback to students.
+Automate the whole process and reduce teacher workload: AI models will automatically create short answer questions, evaluate student responses, and provide appropriate feedback.
+
+iTELL automatically generates summary tasks and short answer questions tailored to your source material. Student responses are evaluated using state-of-the-art systems, ensuring that students understand the content they are reading. Students receive targeted, immediate feedback to help them efficiently address gaps in their understanding.
 
 ### Teacher dashboard
 
@@ -30,5 +32,4 @@ Visit the [AI-ALOE website](https://aialoe.org/) or the [LEAR lab website](https
 
 ## Contact us
 
-iTELL is looking for teachers interested in bringing this interactive textbook framework into their classroom. Contact us at itell@itell.com to discuss potentialy uses.
-
+iTELL is motivated to work with teachers and organizations who are aligned with our mission of making instructional materials more interactive. Contact us at lear.lab.vu@gmail.com to start a discussion.

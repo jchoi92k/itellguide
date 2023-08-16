@@ -1,6 +1,6 @@
 # Focus Time
 
-Focus time (the duration where something is visible in a user's viewport) is tracked on a per-section-element basis. When the user enters a section, the visible time of every text paragraph, figure and video elements get is recorded. The css selector used is
+Focus time (the duration where something is visible in a user's viewport) is tracked on a per-section-element basis. When the user enters a section, the visible time of every text paragraph, figure and video elements get is recorded. The CSS selector used is
 
 ```javascript
 content.querySelectorAll("h1, h2, p, img, video, iframe")
